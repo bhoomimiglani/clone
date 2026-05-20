@@ -32,8 +32,8 @@
   <header class="header" id="header">
     <div class="header-inner">
 
-      <!-- Left: Hamburger + Nav -->
-      <div style="display:flex;align-items:center;gap:4px;">
+      <!-- LEFT: Hamburger + Nav -->
+      <div class="header-left">
         <button class="hamburger" id="hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -102,11 +102,11 @@
         </nav>
       </div>
 
-      <!-- Center: Logo -->
+      <!-- CENTER: Logo -->
       <a href="index.html" class="logo">EVER<span>THREAD</span></a>
 
-      <!-- Right: Search + Icons -->
-      <div style="display:flex;align-items:center;gap:6px;">
+      <!-- RIGHT: Search + Icons -->
+      <div class="header-right">
         <div class="header-search">
           <input type="text" placeholder="Search products..." id="searchInput" autocomplete="off" />
           <button id="searchBtn" aria-label="Search"><i class="fa fa-search"></i></button>
@@ -119,6 +119,7 @@
           <span class="cart-count" id="cartCount">0</span>
         </button>
       </div>
+
     </div>
   </header>
 
