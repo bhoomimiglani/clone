@@ -1,6 +1,11 @@
 ﻿// ===== CHECKOUT ENGINE =====
 const COUPONS_CO = {
-  'SHARK10':  { pct: 10 },
+  'WELCOME15': { pct: 15 },
+  'FIRST15':   { pct: 15 },
+  'SUMMER20':  { pct: 20 },
+  'WELCOME5':  { pct: 5  },
+  'FLAT10':    { pct: 10 }
+};,
   'FIRST15':  { pct: 15 },
   'SUMMER20': { pct: 20 },
   'WELCOME5': { pct: 5  }
@@ -284,4 +289,6 @@ async function confirmOrder(method, paymentId, amount) {
   document.getElementById('orderIdDisplay').textContent = `Order ID: ${orderId}`;
   document.getElementById('successModal').classList.add('open');
 }
+
+
 

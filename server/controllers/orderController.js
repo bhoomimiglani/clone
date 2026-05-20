@@ -1,9 +1,12 @@
-const Order        = require('../models/Order');
+﻿const Order        = require('../models/Order');
 const Product      = require('../models/Product');
 const InventoryLog = require('../models/Inventory');
 
 const COUPONS = {
-  'SHARK10':  { pct: 10 }, 'FIRST15': { pct: 15 },
+  'WELCOME15': { pct: 15 }, 'FIRST15': { pct: 15 },
+  'SUMMER20':  { pct: 20 }, 'WELCOME5': { pct: 5 },
+  'FLAT10':    { pct: 10 }
+};, 'FIRST15': { pct: 15 },
   'SUMMER20': { pct: 20 }, 'WELCOME5':{ pct: 5  }
 };
 
@@ -96,7 +99,7 @@ exports.cancelOrder = async (req, res) => {
     const order = await Order.findOne({ orderId: req.params.id, user: req.user._id });
     if (!order) return res.status(404).json({ success: false, message: 'Order not found' });
     if (['shipped','out_for_delivery','delivered'].includes(order.status)) {
-      return res.status(400).json({ success: false, message: 'Cannot cancel — order already shipped' });
+      return res.status(400).json({ success: false, message: 'Cannot cancel â€” order already shipped' });
     }
     order.status = 'cancelled';
     order.tracking.push({ status: 'cancelled', message: 'Order cancelled by customer' });
@@ -125,7 +128,7 @@ exports.cancelOrder = async (req, res) => {
   }
 };
 
-// ── ADMIN ──
+// â”€â”€ ADMIN â”€â”€
 
 // @GET /api/admin/orders
 exports.getAllOrders = async (req, res) => {
@@ -161,3 +164,5 @@ exports.updateOrderStatus = async (req, res) => {
     res.status(500).json({ success: false, message: err.message });
   }
 };
+
+
