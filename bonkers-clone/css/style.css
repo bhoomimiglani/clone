@@ -436,23 +436,24 @@ input, textarea { font-family: inherit; }
 }
 .filter-tab.active, .filter-tab:hover { background: var(--black); color: var(--white); border-color: var(--black); }
 
-/* Products Grid — 4 columns like Bonkers */
+/* Products Grid — 4 columns with spacing like reference */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--border-color);
+  gap: 20px;
+  background: transparent;
 }
 
 /* ===== PRODUCT CARD — EverThread style ===== */
 .product-card {
   background: var(--white);
   overflow: hidden;
-  transition: box-shadow var(--transition);
+  transition: box-shadow var(--transition), transform var(--transition);
   cursor: pointer;
   position: relative;
+  border: 1px solid #f0f0f0;
 }
-.product-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.10); z-index: 2; }
+.product-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.10); transform: translateY(-2px); z-index: 2; }
 
 /* Image area */
 .product-img-wrap {
