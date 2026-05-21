@@ -16,6 +16,8 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Account from './pages/Account'
 import Wishlist from './pages/Wishlist'
+import About from './pages/About'
+import Policies from './pages/Policies'
 import NotFound from './pages/NotFound'
 
 // Admin pages
@@ -57,6 +59,8 @@ export default function App() {
             <Route path="register" element={<Register />} />
             <Route path="account" element={<Account />} />
             <Route path="wishlist" element={<Wishlist />} />
+            <Route path="about" element={<About />} />
+            <Route path="policies" element={<Policies />} />
             <Route path="*" element={<NotFound />} />
           </Route>
 

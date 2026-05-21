@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { useCart } from '../../context/CartContext'
+import { BRAND } from '../../utils/brand'
 import api from '../../utils/api'
 import './Navbar.css'
 
@@ -141,7 +142,7 @@ export default function Navbar() {
           </div>
 
           {/* CENTER */}
-          <Link to="/" className="logo">EVER<span>THREAD</span></Link>
+          <Link to="/" className="logo">EVER<span>THREADS</span></Link>
 
           {/* RIGHT */}
           <div className="header-right">

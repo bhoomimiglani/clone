@@ -2,11 +2,13 @@ import './AnnouncementBar.css'
 
 const messages = [
   '🚚 FREE SHIPPING ON ORDERS ABOVE ₹999',
-  '💳 EXTRA 5% OFF ON PREPAID ORDERS',
-  '📦 SHIPS WITHIN 48 HOURS',
+  '✦ FOR CREATORS. BY CREATORS.',
+  '📦 SHIPS WITHIN 2–5 BUSINESS DAYS',
   '🎁 USE CODE WELCOME15 FOR 15% OFF YOUR FIRST ORDER',
-  '🔄 EASY 7-DAY RETURNS',
-  '🇮🇳 100% MADE IN INDIA',
+  '🇮🇳 BUILT IN INDIA',
+  '✦ WEAR YOUR STORY.',
+  '💳 EXTRA 5% OFF ON PREPAID ORDERS',
+  '📸 TAG US @EVERTHREADS.IN',
 ]
 
 export default function AnnouncementBar() {

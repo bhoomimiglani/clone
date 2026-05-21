@@ -5,9 +5,31 @@ import ProductCard from '../components/product/ProductCard'
 import './Home.css'
 
 const SLIDES = [
-  { tag: 'NEW COLLECTION', title: "SUMMER'S HOT,\nSO IS OUR\nCOLLECTION", sub: 'Unisex luxury streetwear crafted for the bold', bg: 'slide-bg-1', cta: 'SHOP SUMMER SOCIETY', cta2: 'EXPLORE ALL' },
-  { tag: "CELEBRITY PICKS", title: "ANUSHKA SEN'S\nCURATED\nSTAPLES", sub: 'Handpicked summer essentials by Anushka Sen', bg: 'slide-bg-2', cta: 'SHOP THE EDIT', cta2: 'VIEW LOOKBOOK' },
-  { tag: 'FOR THE RACER IN YOU', title: "DRIFT\n2.0\nIS HERE", sub: 'Speed-inspired streetwear for the fearless', bg: 'slide-bg-3', cta: 'SHOP DRIFT 2.0', cta2: 'SEE THE STORY' },
+  {
+    tag: 'FOR CREATORS. BY CREATORS.',
+    title: "WEAR YOUR\nSTORY.",
+    sub: 'Story-driven clothing for the generation that creates.',
+    bg: 'slide-bg-1',
+    cta: 'SHOP NOW',
+    cta2: 'OUR STORY',
+    cta2Link: '/about'
+  },
+  {
+    tag: 'NEW DROP',
+    title: "SUMMER\nSOCIETY\nIS HERE",
+    sub: 'The season\'s most wanted pieces — limited run.',
+    bg: 'slide-bg-2',
+    cta: 'SHOP SUMMER SOCIETY',
+    cta2: 'EXPLORE ALL'
+  },
+  {
+    tag: 'BUILT IN INDIA',
+    title: "DRIFT\n2.0\nIS HERE",
+    sub: 'Speed-inspired streetwear for the fearless creator.',
+    bg: 'slide-bg-3',
+    cta: 'SHOP DRIFT 2.0',
+    cta2: 'SEE THE STORY'
+  },
 ]
 
 const TESTIMONIALS = [
@@ -87,7 +109,7 @@ export default function Home() {
               <p className="slide-sub">{s.sub}</p>
               <div className="slide-btns">
                 <Link to="/shop" className="btn-primary">{s.cta}</Link>
-                <Link to="/shop" className="btn-outline">{s.cta2}</Link>
+                <Link to={s.cta2Link || '/shop'} className="btn-outline">{s.cta2}</Link>
               </div>
             </div>
           </div>
@@ -144,8 +166,8 @@ export default function Home() {
       {/* Marquee Strip */}
       <div className="marquee-strip">
         <div className="marquee-track">
-          {['STREETWEAR','•','LUXURY BASICS','•','MADE IN INDIA','•','SUMMER SOCIETY','•','DRIFT 2.0','•','ELEVATED BASICS','•','FREE SHIPPING ABOVE ₹999','•',
-            'STREETWEAR','•','LUXURY BASICS','•','MADE IN INDIA','•','SUMMER SOCIETY','•','DRIFT 2.0','•','ELEVATED BASICS','•','FREE SHIPPING ABOVE ₹999','•'].map((t, i) => (
+          {['FOR CREATORS','✦','BY CREATORS','✦','WEAR YOUR STORY','✦','BUILT IN INDIA','✦','LIMITED DROPS','✦','STORY-DRIVEN DESIGN','✦','FREE SHIPPING ABOVE ₹999','✦',
+            'FOR CREATORS','✦','BY CREATORS','✦','WEAR YOUR STORY','✦','BUILT IN INDIA','✦','LIMITED DROPS','✦','STORY-DRIVEN DESIGN','✦','FREE SHIPPING ABOVE ₹999','✦'].map((t, i) => (
             <span key={i}>{t}&nbsp;&nbsp;</span>
           ))}
         </div>
@@ -260,8 +282,8 @@ export default function Home() {
       <section className="instagram-strip">
         <div className="container">
           <div className="section-header centered">
-            <h2>@EVERTHREAD</h2>
-            <p>Tag us to get featured</p>
+            <h2>@EVERTHREADS.IN</h2>
+            <p>Tag us to get featured · <a href="https://instagram.com/everthreads.in" target="_blank" rel="noopener noreferrer" style={{ color:'var(--accent)', fontWeight:700 }}>Follow on Instagram</a></p>
           </div>
           <div className="insta-grid">
             {[
@@ -272,28 +294,12 @@ export default function Home() {
               'linear-gradient(135deg,#2d1b00,#5c3d11)',
               'linear-gradient(135deg,#0a1628,#1a3a5c)',
             ].map((bg, i) => (
-              <div key={i} className="insta-item">
+              <a key={i} className="insta-item" href="https://instagram.com/everthreads.in" target="_blank" rel="noopener noreferrer">
                 <div className="insta-placeholder" style={{ background: bg }}>
                   <i className="fab fa-instagram" />
                 </div>
-              </div>
+              </a>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Newsletter */}
-      <section className="newsletter">
-        <div className="container">
-          <div className="newsletter-inner">
-            <div className="newsletter-text">
-              <h2>JOIN THE CLUB</h2>
-              <p>Get early access to drops, exclusive deals & style inspo</p>
-            </div>
-            <form className="newsletter-form" onSubmit={handleNewsletter}>
-              <input type="email" placeholder="Enter your email address" value={email} onChange={e => setEmail(e.target.value)} required />
-              <button type="submit" className="btn-primary">SUBSCRIBE</button>
-            </form>
           </div>
         </div>
       </section>

@@ -1,59 +1,95 @@
 import { Link } from 'react-router-dom'
+import { BRAND } from '../../utils/brand'
 import './Footer.css'
 
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="container">
+      <div className="footer-container">
         <div className="footer-grid">
-          <div className="footer-brand">
-            <Link to="/" className="logo footer-logo">EVER<span>THREAD</span></Link>
-            <p>Unisex luxury streetwear crafted for the bold. Made in India, worn worldwide.</p>
-            <div className="social-links">
-              <a href="#" aria-label="Instagram"><i className="fab fa-instagram" /></a>
-              <a href="#" aria-label="Facebook"><i className="fab fa-facebook" /></a>
-              <a href="#" aria-label="Twitter"><i className="fab fa-twitter" /></a>
-              <a href="#" aria-label="YouTube"><i className="fab fa-youtube" /></a>
+
+          {/* Brand column */}
+          <div className="footer-brand-col">
+            <Link to="/" className="footer-logo">EVER<span>THREADS</span></Link>
+            <p className="footer-tagline">"{BRAND.motto}"</p>
+            <p className="footer-desc">{BRAND.description}</p>
+            <div className="footer-socials">
+              <a href={BRAND.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+                <i className="fab fa-instagram" />
+              </a>
+              <a href={`mailto:${BRAND.email}`} aria-label="Email" title="Email us">
+                <i className="fa fa-envelope" />
+              </a>
+              <a href={`tel:${BRAND.phone1}`} aria-label="Call us" title="Call us">
+                <i className="fa fa-phone" />
+              </a>
             </div>
           </div>
+
+          {/* Shop column */}
           <div className="footer-col">
             <h4>SHOP</h4>
             <ul>
               <li><Link to="/shop?category=men">Men</Link></li>
               <li><Link to="/shop?category=women">Women</Link></li>
-              <li><Link to="/shop?tag=new">New In</Link></li>
-              <li><Link to="/shop">Collections</Link></li>
+              <li><Link to="/shop?category=unisex">Unisex</Link></li>
+              <li><Link to="/shop?category=accessories">Accessories</Link></li>
+              <li><Link to="/shop?tag=new">New Drops</Link></li>
               <li><Link to="/shop?sort=discount">Sale</Link></li>
             </ul>
           </div>
+
+          {/* Help column */}
           <div className="footer-col">
             <h4>HELP</h4>
             <ul>
-              <li><a href="#">Size Guide</a></li>
-              <li><a href="#">Track Order</a></li>
-              <li><a href="#">Returns & Exchange</a></li>
-              <li><a href="#">Shipping Policy</a></li>
-              <li><a href="#">FAQs</a></li>
+              <li><Link to="/policies#shipping">Shipping Policy</Link></li>
+              <li><Link to="/policies#returns">Returns & Cancellation</Link></li>
+              <li><Link to="/policies#privacy">Privacy Policy</Link></li>
+              <li><Link to="/account">Track Order</Link></li>
+              <li><a href={`mailto:${BRAND.email}`}>Contact Us</a></li>
             </ul>
           </div>
+
+          {/* Contact column */}
           <div className="footer-col">
-            <h4>COMPANY</h4>
+            <h4>CONTACT</h4>
             <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Press</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Privacy Policy</a></li>
+              <li>
+                <a href={BRAND.instagramUrl} target="_blank" rel="noopener noreferrer">
+                  <i className="fab fa-instagram" /> {BRAND.instagram}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${BRAND.email}`}>
+                  <i className="fa fa-envelope" /> {BRAND.email}
+                </a>
+              </li>
+              <li>
+                <a href={`tel:${BRAND.phone1}`}>
+                  <i className="fa fa-phone" /> {BRAND.phone1}
+                </a>
+              </li>
+              <li>
+                <a href={`tel:${BRAND.phone2}`}>
+                  <i className="fa fa-phone" /> {BRAND.phone2}
+                </a>
+              </li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/policies">Policies</Link></li>
             </ul>
           </div>
+
         </div>
+
+        {/* Bottom bar */}
         <div className="footer-bottom">
-          <p>© 2026 EverThread. All rights reserved. Made with ❤️ in India.</p>
-          <div className="payment-icons">
-            <i className="fab fa-cc-visa" />
-            <i className="fab fa-cc-mastercard" />
-            <i className="fab fa-cc-paypal" />
-            <i className="fab fa-google-pay" />
+          <p>© {BRAND.year} {BRAND.name}. All rights reserved. Built in India for creators.</p>
+          <div className="footer-payment-icons">
+            <i className="fab fa-cc-visa" title="Visa" />
+            <i className="fab fa-cc-mastercard" title="Mastercard" />
+            <i className="fab fa-google-pay" title="Google Pay" />
+            <i className="fa fa-university" title="Net Banking" />
           </div>
         </div>
       </div>

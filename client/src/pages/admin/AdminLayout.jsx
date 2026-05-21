@@ -70,7 +70,7 @@ export default function AdminLayout() {
       {/* Sidebar */}
       <aside className="admin-sidebar">
         <div className="admin-brand">
-          <span className="admin-logo">EVER<span>THREAD</span></span>
+          <span className="admin-logo">EVER<span>THREADS</span></span>
           <span className="admin-badge">Admin</span>
         </div>
 
