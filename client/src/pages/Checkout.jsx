@@ -175,16 +175,15 @@ export default function Checkout() {
       }
 
       // 3. Open Razorpay checkout with selected method
-      const methodMap = { upi: 'upi', card: 'card', netbanking: 'netbanking', wallet: 'wallet' }
       const rzpResponse = await openRazorpayCheckout({
-        key:    rzpData.key,
-        order:  rzpData.order,
-        amount: total,
-        name:   'EverThread',
-        description: `Order — ${cart.length} item(s)`,
-        prefill: { name: address.name, email: user.email, phone: address.phone },
-        theme:  { color: '#e63946' },
-        method: methodMap[paymentMethod] ? { [methodMap[paymentMethod]]: true } : undefined,
+        key:            rzpData.key,
+        order:          rzpData.order,
+        amount:         total,
+        name:           'EverThread',
+        description:    `Order — ${cart.length} item(s)`,
+        prefill:        { name: address.name, email: user.email, phone: address.phone },
+        theme:          { color: '#e63946' },
+        selectedMethod: paymentMethod, // 'upi' | 'card' | 'netbanking' | 'wallet'
       })
 
       // 4. Verify signature on backend
